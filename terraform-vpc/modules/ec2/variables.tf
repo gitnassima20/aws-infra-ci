@@ -5,7 +5,7 @@ variable "sg_id" {
 
 variable "subnets" {
   type        = list(string)
-  description = "Subnets IDs for EC2"
+  description = "Subnets for EC2"
 }
 
 variable "ec2_names" {

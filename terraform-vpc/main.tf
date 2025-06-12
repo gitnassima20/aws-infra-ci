@@ -15,3 +15,10 @@ module "ec2" {
   subnets = module.vpc.subnet_ids
 }
 
+module "alb" {
+  source = "../terraform-vpc/modules/alb"
+  sg_id = module.sg.sg_id
+  subnets = module.vpc.subnet_ids
+  vpc_id = module.vpc.vpc_id
+  instances = module.ec2.instances
+}
